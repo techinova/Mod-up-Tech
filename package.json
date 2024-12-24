@@ -1,0 +1,26 @@
+{
+  "name": "mod-up-tech",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techinova/Mod-up-Tech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/techinova/Mod-up-Tech/issues"
+  },
+  "homepage": "https://github.com/techinova/Mod-up-Tech#readme",
+  "description": "",
+  "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "express": "^4.21.2",
+    "firebase": "^11.1.0"
+  }
+}

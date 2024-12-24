@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+    <link rel="stylesheet" href="/style/login.css">
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js">
+        const googleLoginButton = document.getElementById("google-login");
+
+googleLoginButton.addEventListener("click", () => {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log("Usuário logado:", result.user);
+    })
+    .catch(error => {
+      console.error("Erro no login:", error);
+    });
+});
+
+    </script>
+<script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js">
+    const facebookLoginButton = document.getElementById("facebook-login");
+
+facebookLoginButton.addEventListener("click", () => {
+  const provider = new firebase.auth.FacebookAuthProvider();
+
+  firebase.auth().signInWithPopup(provider)
+    .then(result => {
+      console.log("Usuário logado:", result.user);
+    })
+    .catch(error => {
+      console.error("Erro no login:", error);
+    });
+});
+
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="formContainer">
+            <!-- Formulário de Login -->
+            <div class="form-card" id="loginCard">
+                <h2>Login</h2>
+                
+                  
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <button type="submit" class="btn">Entrar</button>
+                    <div class="social-login">
+                        <p>Ou entre com:</p>
+                        <button id="google-login" class="social-btn google-btn">Google</button>
+                        <button id="facebook-login" class="social-btn facebook-btn">Facebook</button>
+                      </div>
+                    <div class="links">
+                        <a href="#">Esqueceu sua senha?</a>
+                        <a href="#" id="showRegister">Criar conta</a>
+                        <a href="/index.html">Voltar para página inicial</a>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Formulário de Cadastro -->
+            <div class="form-card" id="registerCard">
+                <h2>Criar Conta</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="newEmail">Email</label>
+                        <input type="email" id="newEmail" name="newEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="newPassword">Senha</label>
+                        <input type="password" id="newPassword" name="newPassword" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirmar Senha</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar senha" required>
+                    </div>
+                    <button type="submit" class="btn">Cadastrar</button>
+                    <div class="links">
+                        <a href="#" id="showLogin">Já tem conta? Entrar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/script/login.js"></script>
+    
+</body>
+</html>
