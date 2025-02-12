@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/style/style.css">
     <link rel="icon" href="/src/logo_3-removebg-preview.png " type="image/png">
     <link rel="icon" href="https://www.InovaTech/favicon.ico" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     
 
 </head>
@@ -17,15 +20,18 @@
     <nav class="navbar">
         <div class="logo"><img src="/src/logo_3-removebg-preview.png" alt="SoftTec Logo" height="50"></div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="#contact">Home</a></li>
-            <li><a href="/html/sobre.html">Sobre</a></li>
-            <li><a href="/html/projetos.html">Projetos</a></li>
-            <li><a href="/html/login.html">Entrar</a></li>
+            <li><a href="#contact"><ion-icon name="home-outline"></ion-icon> Home</a></li>
+    <li><a href="/html/sobre.html"><ion-icon name="information-circle-outline"></ion-icon> Sobre</a></li>
+    <li><a href="/html/projetos.html"><ion-icon name="briefcase-outline"></ion-icon> Projetos</a></li>
+    <li><a href="/html/manutenção.html"><ion-icon name="cart-outline"></ion-icon> Mod-Up Shop</a></li>
+    <li><a href="html/manutenção.html"><ion-icon name="newspaper-outline"></ion-icon> Mod-Up News</a></li>
+    <li><a href="/html/manutenção.html"><ion-icon name="log-in-outline"></ion-icon> Entrar</a></li>
         </ul>
         <div class="burger" id="burger">
             <span></span>
             <span></span>
             <span></span>
+           
         </div>
         
     </nav>
@@ -41,7 +47,7 @@
 
     <section id="about" class="about">
         <h2>Sobre a ModUp tecnologia </h2>
-        <p>Bem-vindo à Mod-Up tecnologia! Somos uma equipe dedicada de 8 profissionais, liderada por Arthur Reis, com o objetivo
+        <p>Bem-vindo à Mod-Up tecnologia! Somos uma equipe dedicada, com o objetivo
             de ajudar empresas e empreendedores a impulsionarem seus negócios por meio de soluções tecnológicas sob
             medida. Na Mod-Up, estamos comprometidos em entregar projetos de alta qualidade que atendam às
             necessidades exclusivas de cada cliente. Com experiência em diversas tecnologias e metodologias ágeis,
@@ -56,7 +62,7 @@
             </div>
             <div class="card">
                 <h3>Nosso Time</h3>
-                <p>Contamos com uma equipe de 8 profissionais altamente qualificados e apaixonados por tecnologia.</p>
+                <p>Contamos com uma equipe de 6 profissionais altamente qualificados e apaixonados por tecnologia.</p>
             </div>
             <div class="card">
                 <h3>Nossos Valores</h3>
@@ -107,23 +113,49 @@
             </div>
         </div>
     </div>
-
-    <div class="cookie-banner" id="cookieBanner">
-       <h3>Política de Cookies</h3> 
-
-       <p> Nós utilizamos cookies para otimizar sua experiência de navegação e para garantir que você tenha a melhor
-        experiência em nosso site. Os cookies são pequenos arquivos de texto armazenados no seu dispositivo que nos
-        permitem reconhecer suas preferências e melhorar continuamente a funcionalidade e a performance do nosso site.</p>
-        <button id="acceptCookies">Aceitar Cookies</button>
+    <div class="container">
+        <!-- Mod-Up Shop -->
+        <div class="card">
+            <ion-icon name="cart-outline" class="icon"></ion-icon>
+            <div class="title">Mod-Up Shop</div>
+            <div class="description">
+                Em breve, nossa loja virtual de hardware! Computadores, teclados, monitores e mais!
+            </div>
+            <span class="coming-soon">Em desenvolvimento...</span>
+        </div>
+    
+        <!-- Mod-Up News -->
+        <div class="card">
+            <ion-icon name="newspaper-outline" class="icon"></ion-icon>
+            <div class="title">Mod-Up News</div>
+            <div class="description">
+                Um portal de notícias para te manter atualizado sobre tecnologia e inovações!
+            </div>
+            <span class="coming-soon">Em breve...</span>
+        </div>
     </div>
+
+    <div id="cookie-popup" class="cookie-popup">
+        <div>
+          <h1>Permitir Cookies</h1>
+          <p class="cookie-text">
+            Nós usamos cookies e outras tecnologias semelhantes para melhorar a sua experiência em nossos serviços,
+            personalizar publicidade e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com tal monitoramento.
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button id="accept-cookies" class="accept-button">Aceitar</button>
+          <button id="reject-cookies" class="reject-button">Rejeitar</button>
+        </div>
+      </div>
     <footer class="footer">
-        <p>&copy; 2024 Mod-Up Tecnologia. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Mod-Up Tecnologia. Todos os direitos reservados.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/arthur-reis-225948234/" target="_blank">LinkedIn</a> |
             <a href="https://github.com/friarthur" target="_blank">GitHub</a> |
             <a href="https://www.instagram.com/modup_tech/" target="_blank">Instagram</a> |
-            <a href="https://wa.me/+5551983172705" target="_blank">WhatsApp</a> |
-            <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a> |
+            <a href="https://wa.me/+5551981527122" target="_blank">WhatsApp</a> |
+            <a href="mailto:moduptecnologia@gmail.com?subject=Interesse%20nos%20serviços%20da%20Mod-Up&body=Olá%20equipe%20Mod-Up,%0D%0A%0D%0AEstou%20interessado%20em%20saber%20mais%20sobre%20seus%20serviços." target="_blank">Email</a> |
             <a href="https://www.youtube.com/@arthurreis8923" target="_blank">YouTube</a> |
             <a href="https://www.tiktok.com/@moduptech" target="_blank">TikToK</a>
         </div>

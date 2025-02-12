@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamos em Manutenção</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+        .whatsapp-button {
+    font-size: 40px; /* Tamanho do ícone */
+    color: #25D366; /* Cor do WhatsApp */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+.whatsapp-button:hover {
+    color: #1EBE5D; /* Efeito ao passar o mouse */
+}
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc;
+            border-top: 5px solid #007BFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Botões */
+        .button-container {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-back {
+            background-color: #333;
+        }
+        .btn-back:hover {
+            background-color: #555;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1EBE5D;
+        }
+        .btn-whatsapp img {
+            width: 20px;
+            margin-right: 8px;
+        }
+        .whatsapp-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            .btn {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+            .loader {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="/src/manuteção.png" alt="Manutenção">
+        <h1>Estamos em Manutenção</h1>
+        <p>Nosso site está passando por melhorias para oferecer a melhor experiência possível. Voltaremos em breve!</p>
+        <div class="loader"></div>
+
+        <!-- Botões -->
+        <div class="button-container">
+            <button class="btn btn-back" onclick="history.back()">Voltar</button>
+            <a href="https://wa.me/+5551981527122" target="_blank" class="btn btn-whatsapp"> <i class="fa-brands fa-whatsapp"></i>
+                  Fale Conosco
+            </a>
+            <p class="whatsapp-text">Se tiver dúvidas, entre em contato pelo WhatsApp!</p>
+        </div>
+    </div>
+
+</body>
+</html>

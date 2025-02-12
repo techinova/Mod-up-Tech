@@ -86,25 +86,48 @@ function showOptions(option) {
     chatboxBody.innerHTML += `<div class="chat-message bot-message">${response}</div>`;
 }
 
-
-function checkCookieConsent() {
-    var consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-        document.getElementById('cookieBanner').style.display = 'block';
+/* Cookie Consent */
+document.addEventListener("DOMContentLoaded", () => {
+    const cookiePopup = document.getElementById("cookie-popup");
+    const acceptButton = document.getElementById("accept-cookies");
+    const rejectButton = document.getElementById("reject-cookies");
+  
+    // Verifica se o consentimento já foi dado
+    if (getCookie("cookie_consent") !== null) {
+      cookiePopup.style.display = "none"; // Esconde o pop-up se já houver consentimento
     }
-}
-
-// Função para aceitar cookies e ocultar o banner
-function acceptCookies() {
-    localStorage.setItem('cookieConsent', 'true');
-    document.getElementById('cookieBanner').style.display = 'none';
-}
-
-// Adiciona o evento de clique ao botão de aceitar cookies
-document.getElementById('acceptCookies').addEventListener('click', acceptCookies);
-
-// Verifica se o usuário já aceitou os cookies ao carregar a página
-window.onload = checkCookieConsent;
+  
+    // Aceitar cookies
+    acceptButton.addEventListener("click", () => {
+      setCookie("cookie_consent", "accepted", 1); 
+      cookiePopup.style.display = "none"; // Esconde o pop-up
+    });
+  
+    // Rejeitar cookies
+    rejectButton.addEventListener("click", () => {
+      setCookie("cookie_consent", "rejected", 365); // Define rejeição por 1 ano
+      cookiePopup.style.display = "none"; // Esconde o pop-up
+    });
+  
+    // Função para definir um cookie
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+    }
+  
+    // Função para obter um cookie
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ");
+      for (let i = 0; i < cookies.length; i++) {
+        const [key, value] = cookies[i].split("=");
+        if (key === name) {
+          return value;
+        }
+      }
+      return null;
+    }
+  });
 
 //navbar burguer
 document.addEventListener('DOMContentLoaded', () => {
