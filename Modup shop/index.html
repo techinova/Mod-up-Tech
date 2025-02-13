@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod-up Shop </title>
+    <link rel="stylesheet" href="/Modup shop/css/style.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="/src/logo_3-removebg-preview.png" alt="SoftTec Logo" height="50"></div>
+        <ul class="nav-links" id="nav-links">
+            <li class="category-menu">
+                <a href="javascript:void(0)" class="open-btn">
+                    <ion-icon name="list-outline"></ion-icon> Categorias
+                </a>
+                <div class="sidebar">
+                    <button class="close-btn">&times; Fechar</button>
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="#" class="category-toggle" data-target="hardware">Hardware</a></li>
+                        <ul class="subcategory hardware">
+                            <li>Processadores</li>
+                            <li>Placa Mãe</li>
+                            <li>Memórias</li>
+                            <li>Placa de Vídeo</li>
+                            <li>Disco Rígido interno (HD)</li>
+                            <li>SSD</li>
+                            <li>Gabinete</li>
+                            <li>Fonte</li>
+                        </ul>
+                        <li>Periféricos</li>
+                        <li>Computadores</li>
+                        <li>Kit Upgrade</li>
+                        <li>Monitores</li>                    
+                        <li>Notebooks e Portáteis</li>
+                        <li>Mochilas</li>                        
+                        <li>Redes e Wireless</li>      
+                        <li>Marcas</li>
+                        <h3>Ajuda e Configurações</h3>
+                        <li>Minha Conta</li>
+                        <li>Quem Somos</li>
+                        <li>Atendimento ao Cliente</li>
+                        <li>Como Comprar</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+                <div class="overlay"></div>
+            </li>
+            
+            <li><a href="/html/manutenção.html"><ion-icon name="log-in-outline"></ion-icon> Entrar</a></li>
+            <li><a href="https://wa.me/SEU_NUMERO" target="_blank"><ion-icon name="headset-outline"></ion-icon> Atendimento</a></li>
+            <li><a href="/html/manutenção.html"><ion-icon name="pricetag-outline"></ion-icon> Produtos</a></li>            
+            <li class="cart-button">
+                <a href="/html/carrinho.html">
+                    <ion-icon name="cart-outline"></ion-icon> Carrinho
+                </a>
+            </li>
+            <li class="search-bar">
+                <input type="text" placeholder="Buscar produtos..." />
+                <button><ion-icon name="search-outline"></ion-icon></button>
+            </li>
+        </ul>
+        <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+           
+        </div>
+        
+    </nav>
+
+    <!--slides promos-->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="/Modup shop/img/1591387862_banner_informatica.webp" alt="Banner 1"></div>
+            
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+        </div>
+    </div>
+
+    <!-- Produtos exemplos -->
+    <div class="section-title">
+        <h2>Hardware</h2>
+    </div>
+    
+    <div class="product-container">
+        <!-- Card 1: Processador -->
+        <div class="product-card">
+            <img src="/Modup shop/img/processador.jpg" alt="Processador" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Processador Intel i9</h3>
+                <p class="product-type">Processador</p>
+                <p class="product-price">R$ 2.499,99</p>
+            </div>
+            <div class="product-actions">
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="buy-now">Comprar Agora</button>
+            </div>
+        </div>
+    
+        <!-- Card 2: Placa Mãe -->
+        <div class="product-card">
+            <img src="/Modup shop/img/placa-mae.jpg" alt="Placa Mãe" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Placa Mãe ASUS ROG</h3>
+                <p class="product-type">Placa Mãe</p>
+                <p class="product-price">R$ 1.299,99</p>
+            </div>
+            <div class="product-actions">
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="buy-now">Comprar Agora</button>
+            </div>
+        </div>
+    
+        <!-- Card 3: Placa de Vídeo -->
+        <div class="product-card">
+            <img src="/Modup shop/img/placa-video.jpg" alt="Placa de Vídeo" class="product-image">
+            <div class="product-info">
+                <h3 class="product-title">Placa de Vídeo NVIDIA RTX 3070</h3>
+                <p class="product-type">Placa de Vídeo</p>
+                <p class="product-price">R$ 3.799,99</p>
+            </div>
+            <div class="product-actions">
+                <button class="add-to-cart">Adicionar ao Carrinho</button>
+                <button class="buy-now">Comprar Agora</button>
+            </div>
+        </div>
+    </div>
+    
+<script src="/Modup shop/script/script.js"></script>
+</body>
+</html>

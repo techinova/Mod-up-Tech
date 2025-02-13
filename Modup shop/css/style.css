@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+:root{
+    --Azul-claro: #e9ebf1;
+    --Azul-facebook: #3b5998; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: var(--Azul-claro); /* Tom de azul claro */
+}
+
+/* Estilos do Header */
+.header {
+    background:  var(--Azul-facebook); /* Azul semelhante ao do Facebook */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--Azul-facebook);
+}
+
+.logo img {
+    height: 89px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #8b9dc3; 
+    color: #1f1e1e;
+}
+/*departamento*/
+.category-menu {
+    position: relative;
+}
+
+.category-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+}
+
+.category-menu a:hover {
+    background-color: #ddd;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Começa fora da tela */
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;  /* Ativa a rolagem vertical */
+    scrollbar-width: thin; 
+}
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu > li {
+    padding: 10px 20px;
+}
+.subcategory {
+    display: none;  /* Submenu oculto inicialmente */
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.subcategory li {
+    padding: 5px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.subcategory li:hover {
+    background-color: #f1f1f1;
+}
+
+/* Animação de abrir/fechar submenu */
+.category-toggle.active + .subcategory {
+    display: block;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 200px; /* Ajuste conforme necessário */
+        opacity: 1;
+    }
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 12px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 7px;
+}
+
+.sidebar ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+    backdrop-filter: blur(5px); /* Desfoque do fundo */
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* Efeito de transição para mostrar a barra lateral */
+.category-menu.active .sidebar {
+    left: 0; /* Desliza para a posição visível */
+}
+
+.category-menu.active .overlay {
+    display: block;
+}
+
+
+/*barra de pesquisa*/
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 25px;
+    margin-top: -1px;
+    padding: 4px 9px;
+    width: 300px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 4px;
+    font-size: 16px;
+}
+
+.search-bar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #555;
+}
+
+.search-bar button:hover {
+    color: #000;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/*slide*/
+.slider {
+    position: relative;
+    width: 100vw; /* Ocupa toda a largura da tela */
+    height: auto; /* Ajusta a altura conforme a imagem */
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100vw; /* Cada slide ocupa a largura inteira da tela */
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%; /* Faz a imagem ocupar toda a largura */
+    height: auto; /* Mantém a proporção original */
+    
+    object-fit: cover;
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+/*exemplos de produtos*/
+/* Título da Seção de Hardware */
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Container dos cards de produtos */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+/* Estilos para cada card de produto */
+.product-card {
+    width: calc(33% - 20px);  /* 3 cards por linha, com espaçamento */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos para a imagem do produto */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Informações do produto */
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Título do produto */
+.product-title {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Tipo de produto */
+.product-type {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Preço do produto */
+.product-price {
+    font-size: 1.2em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* Área de ações (botões) */
+.product-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+/* Estilo dos botões */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.buy-now {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.buy-now:hover {
+    background-color: #218838;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .product-card {
+        width: calc(50% - 20px);  /* 2 cards por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%;  /* 1 card por linha em telas muito pequenas */
+    }
+}
